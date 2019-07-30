@@ -6,7 +6,7 @@ def convert_to_number(number):
             e = False
             break
         except Exception:
-            print("U enta text, enta operata or numba")
+            print("U enta text, enta numba")
     
     return first_number
 
