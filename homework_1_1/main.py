@@ -9,7 +9,7 @@ for question, answer in question_answer_list:
     while True:
         user_answer = input(question)
         if user_answer.lower() == answer:
-            print('Correct! Next question.')
+            print('Correct! Next question!')
             break
         elif user_answer == "quit":
             input('As you wish. Press "Enter" to close the program. Goodbye!')
