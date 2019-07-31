@@ -4,7 +4,8 @@ def convert_to_number(number):
             first_number = float(number)
             break
         except Exception:
-            print("U enta text, enta numba")
+            number = input("U enta text, enta numba. > ")
+    
     
     return first_number
 
