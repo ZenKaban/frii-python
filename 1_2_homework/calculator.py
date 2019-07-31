@@ -1,9 +1,7 @@
 def convert_to_number(number):
-    e = True
-    while e:
+    while True:
         try:
             first_number = float(number)
-            e = False
             break
         except Exception:
             print("U enta text, enta numba")
