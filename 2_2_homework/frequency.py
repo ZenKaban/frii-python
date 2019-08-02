@@ -6,7 +6,6 @@ import operator
 def get_words_list(filename):
     words_list = []
     with open(filename, "r", encoding = "UTF-8") as text:
-        row_cumulative = ""
         for row in text:
             row = row.strip("\n")
             row = row.lower()
