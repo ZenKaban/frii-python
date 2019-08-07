@@ -1,7 +1,7 @@
 def create_word_object(word):
     word_dict = {}
     char_count = 0
-    for char in word:
+    for _ in word:
         word_dict[char_count] = "_"
         char_count += 1
     return word_dict
@@ -56,7 +56,7 @@ def check_if_game_complete(word_dict):
 print("Добро пожаловать в Поле Чудес!")
 
 word = ("python")
-print("Это змея:","_ "*len(word))
+print("Это змея:", "_ "*len(word))
 word_dict = create_word_object(word)
 used_chars_list = []
 game_complete = False
@@ -64,7 +64,7 @@ game_complete = False
 while game_complete is False:
     input_char = input("Введите букву: ")
     check_char_in_word(input_char=input_char, used_chars_list=used_chars_list, word=word)
-    char_position_list=return_char_position(input_char=input_char, word=word)
+    char_position_list = return_char_position(input_char=input_char, word=word)
     change_game_status(input_char=input_char, word_dict=word_dict, char_position_list=char_position_list)
     print_game_status(word_dict=word_dict)
     game_complete = check_if_game_complete(word_dict=word_dict)
