@@ -1,3 +1,97 @@
+image = [r"""
+ _________
+| /
+|/
+|
+|
+|
+|
+|
+|
+|
+|
+|________________""",
+         r"""
+ ________
+| /   ___|___
+|/   | o   o |
+|    |___-___|
+|
+|
+|
+|
+|
+|
+|
+|________________""",
+         r"""
+ ________
+| /   ___|___
+|/   | o   o |
+|    |___-___|
+|        |
+|        |
+|        |
+|        |
+|
+|
+|
+|________________""",
+         r"""
+ ________
+| /   ___|___
+|/   | o   o |
+|    |___-___|
+|       /|
+|      / |
+|     /  |
+|        |
+|
+|
+|
+|________________""",
+         r"""
+ ________
+| /   ___|___
+|/   | o   o |
+|    |___-___|
+|       /|\
+|      / | \
+|     /  |  \
+|        |
+|
+|
+|
+|________________""",
+         r"""
+ ________
+| /   ___|___
+|/   | o   o |
+|    |___-___|
+|       /|\
+|      / | \
+|     /  |  \
+|        |
+|       /
+|      /
+|
+|________________""",
+         r"""
+ ________
+| /   ___|___
+|/   | x   x |
+|    |___-___|
+|       /|\
+|      / | \
+|     /  |  \
+|        |
+|       / \
+|      /   \
+|
+|________________"""
+         ]
+
+
 def create_word_object(word):
     word_dict = {}
     char_count = 0
@@ -13,9 +107,9 @@ def check_char_in_word(input_char, used_chars_list, word, false_tries):
     else:
         used_chars_list.append(input_char)
         if input_char in word:
-            print("Есть такая буква!", end = " ")
+            print("Есть такая буква!")
         else:
-            print("Нет такой буквы!", end = " ")
+            print("Нет такой буквы!")
             false_tries += 1
     
     return false_tries
@@ -38,7 +132,8 @@ def change_game_status(input_char, word_dict, char_position_list):
         word_dict[position] = input_char
 
 
-def print_game_status(word_dict):
+def print_game_status(word_dict, false_tries, image):
+    print(image[false_tries])
     word_chars_list = []
     for key in word_dict:
         word_chars_list.append(word_dict[key])
@@ -72,6 +167,7 @@ def check_if_game_complete(word_dict, false_tries):
 print("Добро пожаловать в Виселицу!")
 
 word = ("виселица")
+print(image[0])
 print("_ " * len(word))
 word_dict = create_word_object(word)
 used_chars_list = []
@@ -83,8 +179,8 @@ while game_complete is None:
     false_tries = check_char_in_word(input_char = input_char, used_chars_list = used_chars_list, word = word, false_tries=false_tries)
     char_position_list = return_char_position(input_char = input_char, word = word)
     change_game_status(input_char = input_char, word_dict = word_dict, char_position_list = char_position_list)
-    print_game_status(word_dict = word_dict)
-    print("Ошибочных попыток:", false_tries, "/6")
+    print_game_status(word_dict = word_dict, image=image, false_tries=false_tries)
+    # print("Ошибочных попыток:", false_tries, "/6")
     game_complete = check_if_game_complete(word_dict = word_dict, false_tries = false_tries)
     if game_complete:
         print(game_complete)
