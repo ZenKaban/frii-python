@@ -24,5 +24,4 @@ cube = Item(2, "Cube")
 huge_ball = Item(10, "Huge Ball")
 
 bag.add(cube)
-
 bag.add(huge_ball)
