@@ -74,9 +74,9 @@ def print_game_field(game_field):
 
 game = True
 number_list = init_number_list()
+game_field, init_cursor_pos = init_game_field(number_list)
 sorted_number_list = number_list
 sorted_number_list.sort()
-game_field, init_cursor_pos = init_game_field(number_list)
 sorted_game_field, unused = init_game_field(sorted_number_list)
 
 while game:
