@@ -17,7 +17,7 @@ app.config.update(
 
 class ContactForm(FlaskForm):
     number = StringField(label='Name', validators=[
-        validators.Length(min=4, max=25)
+        validators.Length(min=1, max=25)
     ])
 
 def get_random_number():
@@ -50,18 +50,5 @@ def home():
             print(guessed)
             
         return result
-    
-
-# @app.route('/guess/<int:number>', methods = ['POST'])
-# def guess_number(number, guessed):
-#     if number > guessed:
-#         result = ">"
-#     elif number < guessed:
-#         result = "<"
-#     elif number == guessed:
-#         result = "="
-#         get_random_number(guessed)
-#     return result
-
 
 app.run()
