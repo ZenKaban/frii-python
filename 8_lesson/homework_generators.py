@@ -37,7 +37,7 @@ def zip_generator(lst1, lst2):
         pos += 1
 
 
-## testing enum_generator
+## testing zip_generator
 # lst = ['one', 'two', 'three']
 # lst2 = ['big', 'small', 'huge']
 #
