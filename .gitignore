@@ -331,3 +331,4 @@ ASALocalRun/
 .vscode/settings.json
 
 .idea
+/9_lesson/homework/credentials.py
