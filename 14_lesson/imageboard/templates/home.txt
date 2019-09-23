@@ -1,0 +1,13 @@
+Посты в блоге: <br> <br>
+{% for item in posts %}
+    Дата: {{ item.date_created }} <br>
+    Заголовок: {{ item.title }} <br>
+    Текст: {{ item.content }} <br>
+    {% for comment in comments %}
+        {% if comment.post_id|int() == item.id|int() %}
+            {{ comment.date_created }}: {{ comment.content }} <br>
+        {% endif %}
+    {% endfor %}
+    <br>
+{% endfor %}
+Конец постов
